@@ -39,6 +39,9 @@ module SampleApp
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
+    # Enable the asset pipeline
+    config.assets.enabled = true
+
     ### Part of a Spork hack. See http://bit.ly/arY19y
     if Rails.env.test?
       initializer :after => :initialize_dependency_mechanism do
