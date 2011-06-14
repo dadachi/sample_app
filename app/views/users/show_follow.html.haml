@@ -8,7 +8,7 @@
       - unless @users.empty?
         %ul.users
           = render @users
-        = will_paginate @users
+        = paginate @users
 
     %td.sidebar.round
       %strong Name
