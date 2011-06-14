@@ -7,7 +7,7 @@ gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
 gem 'gravatar_image_tag', '0.1.0'
 gem 'kaminari'
 gem 'transitions', :require => ['transitions', 'active_record/transitions']
-gem 'haml'
+gem 'haml', "~> 3.1.2"
 
 # Rails 3.1 - Asset Pipeline
 gem 'json'
@@ -26,7 +26,7 @@ group :test do
 end
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', :git => 'git://github.com/rspec/rspec-rails.git'
   gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
   gem 'launchy'
   gem 'database_cleaner'
