@@ -1,21 +1,44 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
-gem 'sqlite3-ruby', '1.2.5', :require => 'sqlite3'
+gem 'rails', '3.1.0.rc4'
+gem "mysql2", "0.3.2"
+
+gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
 gem 'gravatar_image_tag', '0.1.0'
-gem 'will_paginate', '3.0.pre2'
+gem 'kaminari'
 gem 'transitions', :require => ['transitions', 'active_record/transitions']
 gem 'haml'
 
+# Rails 3.1 - Asset Pipeline
+gem 'json'
+gem 'sass'
+gem 'coffee-script'
+gem 'uglifier'
+gem 'jquery-rails'
+
 group :development do
-  gem 'rspec-rails', '2.1.0'
   gem 'annotate-models', '1.0.4'
   gem 'faker', '0.3.1'
 end
 
 group :test do
-  gem 'rspec', '2.1.0'
-  gem 'webrat', '0.7.1'
-  gem 'spork', '0.8.4'
   gem 'factory_girl_rails', '1.0'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'guard-rspec'
+  gem 'guard-livereload'
+  gem 'growl', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'guard-spork'
+end
+
+# Rails 3.1 - Heroku
+group :production do
+  gem 'therubyracer-heroku', '0.8.1.pre3'
+  gem 'pg'
 end
