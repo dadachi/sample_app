@@ -10,6 +10,7 @@ Spork.prefork do
     require File.dirname(__FILE__) + "/../config/environment"
   end
   require 'rspec/rails'
+  require 'capybara/rspec'
 
   # Requires supporting files with custom matchers and macros, etc,
   # in ./support/ and its subdirectories.

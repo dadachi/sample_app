@@ -4,7 +4,8 @@ describe "LayoutLinks" do
 
   it "should have a Home page at '/'" do
     get '/'
-    response.should have_selector('title', :content => "Home")
+    #response.should have_selector('title', :content => "Home")
+    page.should have_content("Home")
   end
 
   it "should have a Contact page at '/contact'" do
